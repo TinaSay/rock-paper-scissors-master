@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    padding: 2em;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.wrapper{
+    max-width: 1366px;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    height: 15vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-bottom: 2em;
+}
+
+.score{
+    display: flex;
+    background:#fff;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 7.5em;
+    height: 6em;
+}
+
+.score_title {
+    color:  hsl(229, 64%, 46%);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.score_number{
+    font-size: 3rem;
+    font-weight: 700;
+    color:  hsl(229, 25%, 31%);
+}
+
+/* main */
+
+main{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playground{
+    background: url("images/bg-triangle.svg") no-repeat;
+    width:313px;
+    height:278px;
+    position: relative;
+}
+
+.rock{
+    position: absolute;
+    top: -30%;
+    left: -20%;
+    width: 13em;
+    height: 13em;
+}
+
+.rock:hover{
+    top:-29%;
+    transition: top 0.1s;
+}
+
+
+.scissors{
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 13em;
+    height: 13em;
+}
+
+.scissors:hover{
+    top: -29%;
+    transition: top 0.1s;
+}
+
+
+.paper{
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    width: 13em;
+    height: 13em;
+    transform:translateX(-50%);
+}
+
+.paper:hover{
+    bottom: -21%;
+    transition:bottom 0.1s;
+}
+
+/* media queries */
+
+@media screen and (max-width: 900px){
+    .wrapper{
+        width: 100%;
+    }
+
+    
+}
