@@ -45,3 +45,32 @@ const game=(choice)=>{
     console.log(result)
 }
 
+/**
+ * Rules modal
+ */
+
+const rulesBtn=document.querySelector('.rules')
+const overlay=document.querySelector('.overlay')
+const modal=document.querySelector('.modal')
+const closeModal=document.querySelector('.close_modal')
+
+rulesBtn.addEventListener('click',(e)=>{
+    overlay.style.display="flex"
+    overlay.style.opacity="0.7"
+    modal.style.top="50%"
+})
+
+closeModal.addEventListener('click',(e)=>{
+    overlay.style.display="none"
+    overlay.style.opacity="0"
+    modal.style.top="-1000%"
+})
+
+overlay.addEventListener('click',(e)=>{
+    const target=e.currentTarget
+    target.addEventListener('click',e=>{
+        overlay.style.display="none"
+        overlay.style.opacity="0"
+        modal.style.top="-1000%"
+    })
+})
