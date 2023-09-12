@@ -18,7 +18,7 @@ body{
 
 .wrapper{
     max-width: 1366px;
-    width: 45%;
+    width: 55%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,6 +69,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .playground{
@@ -210,6 +211,47 @@ main{
 }
 
 
+.battle{
+    display: none;
+    justify-content: space-between;
+    gap: 2em;
+    width: 100%;
+    padding: 2em;
+}
+
+.battle p{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color:  #ffffff;
+    padding-bottom: 2em;
+}
+
+.yours,
+.theirs{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.darkcircle{
+    border-radius: 100%;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    animation-name: circle-animate;
+    animation-duration: 1s;
+}
+
+.theirChoiceImg{
+    display: none;
+}
+
+@keyframes circle-animate {
+    0% { transform: scale(0.5, 0.5) }
+    100% { transform: scale(2,2) }
+}
+
 /* media queries */
 
 @media screen and (max-width: 900px){
@@ -217,5 +259,16 @@ main{
         width: 100%;
     }
 
+    .rules{
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+    }
+
+    .modal{
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
     
 }
