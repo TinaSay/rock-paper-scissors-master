@@ -15,6 +15,7 @@ const computerChoice=()=>{
 
 }
 
+let verdicts;
 
 const game=(choice)=>{
     let cChoice=computerChoice();
@@ -45,7 +46,9 @@ const game=(choice)=>{
    setTimeout(()=>{
        battleView(choice,cChoice)
    },400)
+    verdicts=result;
 }
+
 
 /**
  * Rules modal
@@ -96,7 +99,8 @@ const battleView=((choice,computerChoice)=>{
         darkcircle.style.display="none"
         theirChoiceImg.style.display="block"
         setImg(computerChoice,theirChoiceImg)
-    },3000)
+        verdictView()
+    },2000)
 })
 
 
@@ -114,3 +118,27 @@ const setImg=((choice,place)=>{
     }
 
 })
+
+/* You win/ you lose verdict */
+
+const verdict=document.querySelector('.verdict')
+const verdictText=document.querySelector('.verdict_text')
+const youWinGlow=document.getElementById('youWinGlow')
+const theyWinGlow=document.getElementById('theyWinGlow')
+const playAgainBtn=document.getElementById('playAgainBtn')
+
+const verdictView=()=>{
+    verdict.style.display="flex"
+    verdictText.textContent=verdicts
+
+    if (verdicts==='You win'){
+        youWinGlow.classList.add('imgGlow')
+    }else if (verdicts==='You lost'){
+        theyWinGlow.classList.add('imgGlow')
+    }
+}
+
+playAgainBtn.addEventListener('click',(e)=>{
+    location.reload();
+})
+
