@@ -123,22 +123,39 @@ const setImg=((choice,place)=>{
 
 const verdict=document.querySelector('.verdict')
 const verdictText=document.querySelector('.verdict_text')
+const scoreNumber=document.querySelector('.score_number')
 const youWinGlow=document.getElementById('youWinGlow')
 const theyWinGlow=document.getElementById('theyWinGlow')
 const playAgainBtn=document.getElementById('playAgainBtn')
+
+let score;
+
+if (localStorage.getItem('score')){
+    score=localStorage.getItem('score')
+}else{
+    score=0;
+}
+
+scoreNumber.textContent=score;
 
 const verdictView=()=>{
     verdict.style.display="flex"
     verdictText.textContent=verdicts
 
     if (verdicts==='You win'){
-        youWinGlow.classList.add('imgGlow')
+        youWinGlow.classList.add('imgGlow');
+        score++;
+        scoreNumber.textContent=score;
     }else if (verdicts==='You lost'){
         theyWinGlow.classList.add('imgGlow')
+        score--;
+        scoreNumber.textContent=score;
     }
 }
 
+
 playAgainBtn.addEventListener('click',(e)=>{
+    localStorage.setItem('score',score)
     location.reload();
 })
 

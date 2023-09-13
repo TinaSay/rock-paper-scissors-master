@@ -27,7 +27,7 @@ body{
 
 header{
     display: flex;
-    height: 15vh;
+    min-height: 15vh;
     width: 100%;
     align-items: center;
     justify-content: space-between;
